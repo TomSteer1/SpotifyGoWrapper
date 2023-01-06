@@ -1,4 +1,4 @@
-module tomsteer.com/spotify
+module github.com/tomsteer1/SpotifyGoWrapper
 
 go 1.19
 
