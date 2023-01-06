@@ -1,0 +1,9 @@
+client_id: 
+client_secret: 
+token:
+refresh_token: 
+expiry:
+redirect_uri: http://localhost:8080/callback
+auth_type:
+scope: 
+enable_logs: true
