@@ -17,8 +17,13 @@ import (
 
 var config ConfigFile
 
-func LoadConfig() {
-	cFile, err := os.Open("spotify.conf")
+func LoadConfig(filePath ...string) {
+	if(len(filePath) == 0) {
+		config.filePath = "spotify.conf"
+	} else {
+		config.filePath = filePath[0]
+	}
+	cFile, err := os.Open(config.filePath)
 	if err != nil {
 		if(os.IsNotExist(err)) {
 			log.Println("Config file does not exist, creating new one")
@@ -86,7 +91,7 @@ func LoadConfig() {
 
 func saveConfig(){
 	log.Println("Saving config")
-	cFile, err := os.Create("spotify.conf")
+	cFile, err := os.Create(config.filePath)
 	if err != nil {
 		log.Println("Error creating config file")
 		log.Fatal(err)

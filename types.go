@@ -4,6 +4,7 @@ type ConfigFile struct {
 	client_id string
 	client_secret string
 	token string
+	filePath string
 	refresh_token string
 	expiry int
 	redirect_uri string
